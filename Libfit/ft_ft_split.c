@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:09:06 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/11 19:45:38 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/11 20:31:31 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdlib.h>
+#include "libft.h"
+/*#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -24,39 +24,38 @@ unsigned int	ft_strlen(char *c)
 	i++;
 	return(i);
 }
-
-char	*ft_strjoin(const char *s1, const char *s2)
+*/
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	unsigned int	i;
+	unsigned int	len;
+	char	*temp;
 	unsigned int	j;
-	char *tmp;
-	unsigned int	size;
-
-
+	
 	i = 0;
-	size = (ft_strlen((char*)s1) + ft_strlen((char*)s2)) + 1;	
-	if	((tmp = (char *) malloc(sizeof(char) * size)) == NULL)
-	return	(NULL);
-	while (s1[i] != '\0')
-	{	
-		tmp[i] = s1[i];
-		i++;
-	}
 	j = 0;
-	while (s2[j] != '\0')
+	len = ft_strlen((char*)s1);
+	temp = (char*) malloc(sizeof(char) * len);
+	while	(s1[i])
 	{
-		tmp[i + j] = s2[j];
-		j++;
-	}
-	tmp[size] = '\0';
-	return (tmp);
+		if	(s1[i] == *set)
+		i++;
+		else
+		{
+			temp[j] = s1[i];
+			i++;
+			j++;
+	  	}
+	}	
+	return	(temp);
 }
-
+/*
 int	main()
 {
-	char	palavra[] = "Gabriel";
-	char	palavra2[] = " Kemmer";	
-	printf("%s", ft_strjoin(palavra, palavra2));
+	char	palavra[] = "  Gabriel ";
+	char	palavra2[] = " ";	
+	printf("%s", ft_strtrim(palavra, palavra2));
 }
+*/
 
 

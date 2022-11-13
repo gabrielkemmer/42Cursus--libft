@@ -15,8 +15,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-*/
-/*int ft_strlen(char* c)
+/*
+int ft_strlen(char* c)
 {
     int i;
 
@@ -47,8 +47,9 @@ char	*ft_strrchr(const char *str, int c)
 /*int main()
 {
     char nome[20] = "Gibriel";
-    char letra = '\0';
+    char letra = 'i';
     printf("%s\n", strrchr(nome, letra));
+    printf("%s\n", strchr(nome, letra));
     printf("%s\n", ft_strrchr(nome, letra));
 }
 */
