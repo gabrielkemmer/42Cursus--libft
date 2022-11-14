@@ -6,7 +6,7 @@
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:37:37 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/09 16:38:43 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:34:18 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 #include <string.h>
 #include <stdio.h>
 */
- char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int	i;
 	int	j;
+
 	i = 0;
 	if (!big && len == 0)
 		return (NULL);

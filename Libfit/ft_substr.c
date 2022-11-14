@@ -6,7 +6,7 @@
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:09:06 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/11 19:12:07 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:34:29 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
-	char *tmp;
-	
+	char			*tmp;
+
 	i = 0;
-	if	((tmp = (char *) malloc(sizeof(char)  * len)) == NULL)
-	return	(NULL);
+	tmp = (char *) malloc(sizeof(char) * len);
+	if (s == NULL)
+		return (NULL);
 	while (s[start] != '\0' && i != len)
 	{	
 		tmp[i] = s[start];
@@ -30,7 +31,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		start++;
 	}
 	tmp[i] = '\0';
-	return(tmp);
+	return (tmp);
 }
 /*
 int	main()
@@ -41,4 +42,3 @@ int	main()
 	printf("%s", ft_substr(palavra, number, len ));
 }
 */
-

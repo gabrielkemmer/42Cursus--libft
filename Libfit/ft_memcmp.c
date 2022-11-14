@@ -6,7 +6,7 @@
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 09:27:03 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/11 17:36:17 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:56:55 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,21 @@
 //eu uso o cast (char *) porque e void.
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int 	i;
-	
+	unsigned int	i;
+
 	i = 0;
 	if (n == 0)
-	return(0);
-	while(i <= n)
+		return (0);
+	while (i <= n)
 	{
-		if	(((unsigned char*)s1)[i] == ((unsigned char*) s2)[i])
+		if (((unsigned char *)s1)[i] == ((unsigned char *) s2)[i])
 		i++;
 		else
-		return( ((unsigned char*)s1)[i] -= ((unsigned char*) s2)[i]);
+			return (((unsigned char *)s1)[i] -= ((unsigned char *) s2)[i]);
 	}
-	return	(0);
+	return (0);
 }
+/*
 int main()
 {
 	char s1[20] = "Gabriel";
@@ -41,5 +42,4 @@ int main()
 	printf("%d", memcmp(s1, s2, size));
 	printf("\n\n");
 	printf("%d", ft_memcmp(s1, s2, size));
-}
-
+}*/

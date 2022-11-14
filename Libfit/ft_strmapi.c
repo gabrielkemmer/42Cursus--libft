@@ -6,7 +6,7 @@
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:09:06 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/13 16:44:23 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:28:58 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,17 @@
 #include <string.h>
 #include <stdlib.h>
 */
-unsigned int		ft_strlen(const char *str) {
-	
-	int	i;
-
-	i = 0;
-	while(str[i])
-		i++;
-	return(i);
-}
-
-char  ft_toupper(unsigned int n, char c)
-{
-  if (c >= 97 && c <= 127)
-  {
-      c = c - 32;
-  }
-  else
-  return  (c);
-}
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	unsigned int		i;
-	char		*temp;
+	unsigned int	i;
+	char			*temp;
 	unsigned int	size;
 
-	size = ft_strlen(((char*)s) + 1);
+	size = ft_strlen(((char *)s) + 1);
 	temp = (char *) malloc(sizeof(char) * size);
 	if (s == NULL || f == NULL)
-	return	(NULL)			
+		return (NULL);
 	i = 0;
 	while (i < size)
 	{
@@ -55,7 +36,6 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	temp[i] = '\0';
 	return (temp);
 }
-
 /*
 int main ()
 {

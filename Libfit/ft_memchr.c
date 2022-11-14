@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:35:24 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/07 16:35:28 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:47:30 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <ctype.h>
+#include "libft.h"
+/*#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
+*/
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	int		i;
@@ -29,7 +29,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
+/*
 int main()
 {
     char nome[] = "Gabri";
@@ -38,4 +38,4 @@ int main()
     printf("%s\n", memchr(nome, letra, tamanho));
     printf("%s\n", ft_memchr(nome, letra, tamanho));
 }
-
+*/

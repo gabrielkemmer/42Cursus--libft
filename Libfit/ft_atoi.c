@@ -6,10 +6,9 @@
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:50:41 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/09 20:50:42 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:10:27 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 /*#include <stdlib.h>
@@ -17,25 +16,27 @@
 #include <stdio.h>
 */
 
-int     ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
-    int signal;
+	int	signal;
 
 	i = 0;
-    signal = 1;
-    while (*nptr == ' ' || *nptr == '\f' || *nptr == '\r' || *nptr == '\n' || *nptr == '\t' || *nptr == '\v')
-    nptr++;
-    if (*nptr == '-')
-    signal = -1;
-    if  (*nptr == '-' || *nptr == '+')
-    nptr++;
-    while (*nptr >= '0' && *nptr <= '9')
-    {
-        i = i * 10 + (*nptr - '0');
-        nptr++;
-    }
-    return (i * signal);
+	signal = 1;
+	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\r')
+		nptr++;
+	while (*nptr == '\n' || *nptr == '\t' || *nptr == '\v')
+		nptr++;
+	if (*nptr == '-')
+		signal = -1;
+	if (*nptr == '-' || *nptr == '+')
+		nptr++;
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		i = i * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (i * signal);
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:09:06 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/13 15:40:24 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:14:04 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,49 +15,33 @@
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
+
+int	ft_absolute(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
 */
-int		ft_absolute(int n)
-{
-	if	(n <0)
-		return	(-n);
-	return	(n);
-
-}
-
-int	ft_len(int n)
-{
-	int	i;
-
-	i = 0;
-	if	(n < 0)
-	i++;
-	while	(n != 0)
-	{
-		i++;
-		n = n / 10;
-	}	
-	return	(i);
-}
-
 char	*ft_itoa(int n)
 {
-	char *result;
-	int len;
-	
-	len = ft_len(n);
-	result = (char*) malloc(sizeof(char) * len);
+	char	*result;
+	int		len;
+
+	len = ft_strlen(n);
+	result = (char *) malloc(sizeof(char) * len);
 	result[len] = '\0';
-	if	(n < 0)
+	if (n < 0)
 		result[0] = '-';
-	else if	(n == 0)
+	else if (n == 0)
 		result[0] = '0';
-	while	(n != 0)
+	while (n != 0)
 	{
 		len--;
 		result[len] = ft_absolute(n % 10) + '0';
 		n = n / 10;
 	}
-	return	(result);
+	return (result);
 }
 /*
 int	main()
@@ -73,5 +57,3 @@ int	main()
 	return	(0);
 }
 */
-
-

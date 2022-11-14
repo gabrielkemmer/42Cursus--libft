@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:35:24 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/07 16:35:28 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:49:40 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,22 @@ int ft_strlen(char* c)
 */
 char	*ft_strrchr(const char *str, int c)
 {
-    int i;
+	int	i;
 
-    i = ft_strlen((char*)str);
-    while (i != 0)
+	i = ft_strlen((char *)str);
+	while (i != 0)
 	{
 		if (str[i] == c)
 			return (&((char *)str)[i]);
 		i--;
 	}
-    return (0);
+	return (0);
 }
-
-//ele pega a primeira ocorrencia da letra que eu pesquisa, o strrchr pega a ultima ocorrencia da pesquisa. Gibriel em strchr imprime ibriel. No strrchr imprime 
+/*ele pega a primeira ocorrencia da letra que eu pesquisa, 
+o strrchr pega a ultima ocorrencia da pesquisa. 
+Gibriel em strchr imprime ibriel. No strrchr imprime 
 //iel.
-/*int main()
+int main()
 {
     char nome[20] = "Gibriel";
     char letra = 'i';

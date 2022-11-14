@@ -6,7 +6,7 @@
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:09:06 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/13 16:45:21 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 09:32:41 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,16 @@
 #include <string.h>
 #include <stdlib.h>
 */
-unsigned int		ft_strlen(const char *str) {
-	
-	int	i;
-
-	i = 0;
-	while(str[i])
-		i++;
-	return(i);
-}
-
-char  ft_toupper(unsigned int n, char c)
-{
-  if (c >= 97 && c <= 127)
-  {
-      c = c - 32;
-  }
-  else
-  return  (c);
-}
-
 void	*ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned int		i;
-	char		*temp;
-	unsigned int	size;
+	unsigned int	i;
+	char			*temp;
+	unsigned int	size;	
 
-	size = ft_strlen(((char*)s) + 1 );
-	temp = (char*) malloc(sizeof(char) * size);
-	if (s == NULL|| f == NULL)
-	return (NULL);
+	size = ft_strlen(((char *)s) + 1);
+	temp = (char *) malloc(sizeof(char) * size);
+	if (s == NULL || f == NULL)
+		return (NULL);
 	i = 0;
 	while (i < size)
 	{
@@ -54,7 +34,6 @@ void	*ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 	temp[i] = '\0';
 }
-
 /*
 int main ()
 {

@@ -6,7 +6,7 @@
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:09:06 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/11 19:00:40 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:49:13 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 /*#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
 unsigned int		ft_strlen(const char *str) {
 	
 	int	i;
@@ -29,20 +28,22 @@ unsigned int		ft_strlen(const char *str) {
 char	*ft_strdup(const char *str)
 {
 	unsigned int	i;
-	char *tmp;
-	
+	char			*tmp;
+	unsigned int	size;
+
 	i = 0;
-	if	((tmp = (char *) malloc(sizeof(const char)  * (ft_strlen(str)))) == NULL)
-	return	(NULL);
+	size = ft_strlen(str);
+	tmp = (char *) malloc(sizeof(const char) * size);
+	if (str == NULL)
+		return (NULL);
 	while (str[i] != '\0')
 	{	
 		tmp[i] = str[i];
 		i++;
 	}
 	tmp[i] = '\0';
-	return(tmp);
+	return (tmp);
 }
-
 /*
 int	main()
 {
@@ -52,4 +53,3 @@ int	main()
 	printf("%s", ft_strdup(palavra));
 }
 */
-

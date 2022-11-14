@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmacedo- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 09:27:03 by gmacedo-          #+#    #+#             */
-/*   Updated: 2022/11/03 09:43:57 by gmacedo-         ###   ########.fr       */
+/*   Updated: 2022/11/14 08:23:45 by gmacedo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "libft.h"
 
-void *ft_memmove(void* dest, const void* src, unsigned int n)
+void	*ft_memmove(void *dest, const void *src, unsigned int n)
 {
 	int	i;
 
 	i = 0;
 	if (n == 0 || src == dest)
-	return	(dest);
+		return (dest);
 	if (src < dest)
 	{
-		while (i < n){
-			((char *)dest)[i] = ((char*)src)[i];
+		while (i < n)
+		{
+			((char *)dest)[i] = ((char *)src)[i];
 			i++;
 		}
 	}
@@ -30,11 +31,11 @@ void *ft_memmove(void* dest, const void* src, unsigned int n)
 	{
 		while (n > 0)
 		{
-			((char *)dest)[i] = ((char*)src)[i];
+			((char *)dest)[i] = ((char *)src)[i];
 			n--;
 		}
 	}
-	return(dest);
+	return (dest);
 }
 
 /*
