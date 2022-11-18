@@ -14,8 +14,7 @@
 
 void	*ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int		i;
-	int		j;
+	unsigned int		i;
 
 	i = 0;
 	j = 0;
@@ -24,17 +23,18 @@ void	*ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i = ft_strlen(s);
 		while (j < i)
 		{
-			(*f)(j, s);
+			(f)(j, s);
 			s++;
 			j++;
 		}
 	}
+	return(0);
 }
 /*
 int main ()
 {
 	char palavra[] = "gabriel";
-	printf("%s",ft_striteri(palavra, (void*)(ft_toupper)));
+	printf("%p",ft_striteri(palavra, (void*)(ft_toupper)));
   	return(0);
 }
 */

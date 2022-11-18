@@ -12,23 +12,24 @@
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
-	char			*tmp;
+	char			*temp;
+	unsigned int	size;
 
-	i = 0;
-	tmp = (char *) malloc(sizeof(char) * len);
-	if (s == NULL)
+	size = ft_strlen((char *)s);
+	temp = malloc(sizeof(char) * (len + 1));
+	if (!s || !temp)
 		return (NULL);
-	while (s[start] != '\0' && i != len)
-	{	
-		tmp[i] = s[start];
+	i = 0;
+	while (start < size && s[start + i] && i < len)
+	{
+		temp[i] = s[start + i];
 		i++;
-		start++;
 	}
-	tmp[i] = '\0';
-	return (tmp);
+	temp[i] = '\0';
+	return (temp);
 }
 /*
 int	main()
@@ -37,5 +38,6 @@ int	main()
 	unsigned int number = 1;
 	unsigned int len = 3;
 	printf("%s", ft_substr(palavra, number, len ));
+	
 }
 */

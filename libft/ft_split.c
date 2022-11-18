@@ -38,14 +38,14 @@ char	**ft_split(const char *s, char c)
 		i++;
 	}
 	temp[j + 1] = '\0';
-	return ((char **) temp);
+	return ((char**)temp);
 }
 /*
 int	main()
 {
-	char	palavra[] = "Gabriel";
-	char	palavra2 = 'b';	
-	printf("%s",ft_split(palavra, palavra2));
+	char	palavra[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+	char	palavra2 = ' ';	
+	printf("%p", ft_split(palavra, palavra2));
 	return	(0);
 }
 */

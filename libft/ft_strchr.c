@@ -31,11 +31,12 @@ char	*ft_strchr(const char *str, int c)
 //ele pega a primeira ocorrencia da letra que eu pesquisa, 
 o strrchr pega a ultima ocorrencia da pesquisa. Gibriel em 
 strchr imprime ibriel. No strrchr imprime 
-//iel.
+//iel.*/
+/*
 int main()
 {
     char nome[20] = "Gabriel";
-    char letra = 'a';
+    char letra = 'i';
     printf("%s\n", strchr(nome, letra));
     printf("%s\n", ft_strchr(nome, letra));
 }

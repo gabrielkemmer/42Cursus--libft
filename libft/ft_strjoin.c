@@ -20,9 +20,9 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	unsigned int	size;
 
 	i = 0;
-	size = (ft_strlen((char *)s1) + ft_strlen((char *)s2)) + 1;
-	tmp = (char *) malloc(sizeof(char) * size);
-	if (s1 == NULL)
+	size = (ft_strlen((char *)s1) + ft_strlen((char *)s2));
+	tmp = (char *) malloc(sizeof(char) * size + 1);
+	if (!tmp)
 		return (NULL);
 	while (s1[i] != '\0')
 	{	
@@ -42,7 +42,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 int	main()
 {
 	char	palavra[] = "Gabriel";
-	char	palavra2[] = " Kemmer";	
+	char	palavra2[] = "Kemmer";	
 	printf("%s", ft_strjoin(palavra, palavra2));
 }
 */
