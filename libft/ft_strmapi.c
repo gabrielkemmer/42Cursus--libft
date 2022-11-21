@@ -11,6 +11,17 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+/*
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+*/
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
@@ -18,12 +29,14 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	char			*temp;
 	unsigned int	size;
 
-	size = ft_strlen(((char *)s) + 1);
-	temp = (char *) malloc(sizeof(char) * size);
-	if (s == NULL || f == NULL || temp == NULL)
+	size = ft_strlen(((char *)s));
+	temp = (char *) malloc(sizeof(char) * size + 1);
+	if (!s)
+		return (NULL);
+	if (temp == NULL)
 		return (NULL);
 	i = 0;
-	while (i < size)
+	while (s[i])
 	{
 		temp[i] = f(i, s[i]);
 		i++;
@@ -32,10 +45,22 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	return (temp);
 }
 /*
-int main ()
+char	f(unsigned int i, char c) //toupper
 {
-	char palavra[] = "gabriel";
-	printf("%s",ft_strmapi(palavra, (ft_toupper)));
-  	return(0);
+	if (c >= 97 && c <= 122)
+	{
+		c = c - 32;
+		return (c);
+	}
+	else
+		return (c);
+}
+
+int main()
+{
+	char str1[] = "LoReM iPsUm";
+	char* str2;
+	str2 = ft_strmapi(str1, *f);
+	printf("%s\n", str2);
 }
 */

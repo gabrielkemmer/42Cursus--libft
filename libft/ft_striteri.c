@@ -12,29 +12,44 @@
 
 #include "libft.h"
 
-void	*ft_striteri(char *s, void (*f)(unsigned int, char*))
+size_t	ft_strlen(const char *s)
 {
-	unsigned int		i;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	if (s != NULL && f != NULL)
-	{
-		i = ft_strlen(s);
-		while (j < i)
-		{
-			(f)(j, s);
-			s++;
-			j++;
-		}
-	}
-	return(0);
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
-/*
-int main ()
+
+void	*ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char palavra[] = "gabriel";
-	printf("%p",ft_striteri(palavra, (void*)(ft_toupper)));
-  	return(0);
+	int	i;
+
+	if (s)
+		i = 0;
+		while (s[i])
+		{
+			f(i, &s[i]);
+			i++;
+		}
 }
-*/
+
+void	f(unsigned int i, char *c) //toupper
+{
+	if (c[i] >= 97 && c[i] <= 122)
+	{
+		c[i] = c[i] - 32;
+	}
+	else
+		c[i]++;
+}
+
+int main()
+{
+	char str1[] = "LoReM iPsUm";
+	char* str2;
+	ft_striteri(str1, *f);
+	printf("%s\n", str1);
+}
+
